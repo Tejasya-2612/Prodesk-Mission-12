@@ -4,7 +4,7 @@ Relay is a production-ready, full-stack chat application built with React, Expre
 
 ## Deployment
 
-Frontend URL: https://prodesk-mission-12.vercel.app/
+Frontend URL: https://prodesk-mission-12.vercel.app/                                                                                                                
 Backend URL: https://sprint12-chat-backend.onrender.com/
 
 ## Features
