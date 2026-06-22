@@ -1,43 +1,69 @@
-# AI Usage Documentation
+## Prompt 1: Socket.io Server Setup
 
-## Prompt Used
+Prompt:
 
-The implementation was created from a structured Sprint 12 brief requesting a production-ready real-time multi-room chat application using React, Vite, Express, and Socket.io. The prompt specified three implementation phases, required socket events, room isolation, typing indicators, online presence, modern responsive design, deployment targets, and documentation deliverables.
+"Create a Node.js Express backend with Socket.io. Configure a WebSocket server that accepts client connections, logs connected users, and supports real-time message broadcasting."
 
-## Why AI Was Used
+Purpose:
 
-AI was used as an engineering collaborator to translate the product brief into a cohesive full-stack architecture, generate the initial implementation, check interactions between client and server events, and prepare deployment documentation. Human review remains important for deployed environment values, product branding, accessibility testing with target users, and any future data-retention policy.
+Used to generate the initial backend WebSocket architecture.
 
-## Code Generation Strategy
+## Prompt 2: React Socket Client
 
-1. Model the backend as the authority for each socket's username and active room.
-2. Validate room names and sanitize message inputs before broadcasting.
-3. Separate the React interface into onboarding, room selection, chat display, and message composition components.
-4. Register stable socket listeners inside `useEffect` and remove each listener during cleanup.
-5. Add unique server-generated message IDs so React StrictMode or network retries cannot render duplicate messages.
-6. Use responsive CSS, semantic HTML, visible focus states, and reduced-motion support without adding a UI framework.
-7. Add explicit environment examples and platform configuration for Vercel and Render.
+Prompt:
 
-## Testing Strategy
+"Create a React Vite frontend that connects to a Socket.io backend and displays real-time chat messages between multiple users."
 
-The generated project should be validated at four levels:
+Purpose:
 
-- **Static build:** Run `npm run build` in `frontend` to catch missing imports and JSX or bundling errors.
-- **Backend smoke test:** Start the backend and request `/health`; expect HTTP 200 and `{ "status": "ok" }`.
-- **Socket behavior:** Connect two clients, verify two-way messaging in one room, then separate them into different rooms and verify no messages cross room boundaries.
-- **UI behavior:** Check username validation, room switching, typing expiry, online counts, auto-scroll, connection feedback, and desktop/mobile layouts.
+Used to establish client-server communication.
 
-Recommended regression scenarios include repeated React StrictMode mounting, rapid room switching, disconnecting while typing, empty messages, messages over 1,000 characters, and reconnecting after the backend restarts.
+## Prompt 3: Username Feature
 
-## Learning Outcomes
+Prompt:
 
-- Learned how Socket.io rooms provide efficient broadcast isolation.
-- Practiced keeping server-side socket state authoritative instead of trusting client-provided identity and room data.
-- Applied React effect cleanup patterns to prevent duplicate event handlers.
-- Connected transient interaction state such as typing indicators and presence to real-time events.
-- Prepared separate frontend and backend services for independent cloud deployment.
-- Recognized where in-memory state is sufficient and where Redis or a persistent database becomes necessary at scale.
+"Implement a username system where users must enter their name before joining the chat room. Display usernames alongside messages."
 
-## Responsible Use
+Purpose:
 
-No secrets, production credentials, personal data, or third-party proprietary code were supplied to the AI. Generated dependencies are standard open-source packages. The final code should receive the same code review, security review, and testing expected of any production contribution.
+Used to add user identity support.
+
+## Prompt 4: Typing Indicator
+
+Prompt:
+
+"Implement a typing indicator using Socket.io where users can see when another user is typing in the current room."
+
+Purpose:
+
+Used to build real-time typing notifications.
+
+## Prompt 5: Multi-Room Architecture
+
+Prompt:
+
+"Create multiple Socket.io rooms named General and Tech Support. Messages must only be visible to users within the selected room."
+
+Purpose:
+
+Used to implement room-based communication and message isolation.
+
+## Prompt 6: UI Enhancement
+
+Prompt:
+
+"Design a modern responsive chat application with room selection, message cards, timestamps, join notifications, and a clean professional layout."
+
+Purpose:
+
+Used to improve user experience and interface design.
+
+## Prompt 7: Deployment
+
+Prompt:
+
+"Provide deployment instructions for a React frontend on Vercel and a Node.js Socket.io backend on Render, including CORS configuration."
+
+Purpose:
+
+Used during production deployment.
