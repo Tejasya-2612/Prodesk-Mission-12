@@ -130,9 +130,11 @@ Open `http://localhost:5173`. To verify room isolation and presence updates, ope
 
 ## Author
 
-A TEJASYA
+A TEJASYA                                                                                                                                                           
 FULL STACK DEVELOPER INTERN 
+
 PRODESK IT
+
 P/IL/26/NOIDA/M1299
 
 
